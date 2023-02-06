@@ -16,7 +16,7 @@ You can also add some tasks:
 - [x] Write a readme
 - [ ] Finish the python course
 - [ ] Profit
-
+![there is no picture](https://thumbs.dreamstime.com/b/chinese-dragon-lantern-11804390.jpg)
 [More on how to write readmes](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)  
  
 :sparkles: :sparkles: :sparkles: :sparkles:
