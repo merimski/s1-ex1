@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>אירועים חינם בישראל</title>
+  <meta name="description" content="כל האירועים החינמיים ברחבי הארץ במקום אחד">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>🎉 אירועים חינם בישראל</h1>
+      <p class="subtitle">הופעות, סדנאות, סיורים, הרצאות ופעילויות לכל המשפחה, בכניסה חופשית</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="filters" aria-label="סינון אירועים">
+      <input id="search" type="search" placeholder="חיפוש לפי שם, עיר או מקום…" aria-label="חיפוש">
+
+      <div class="row">
+        <label>אזור
+          <select id="region"><option value="">כל הארץ</option></select>
+        </label>
+        <label>קטגוריה
+          <select id="category"><option value="">הכל</option></select>
+        </label>
+        <label>מתי
+          <select id="when">
+            <option value="all">כל התאריכים</option>
+            <option value="today">היום</option>
+            <option value="weekend">סוף השבוע</option>
+            <option value="week">7 הימים הקרובים</option>
+            <option value="month">30 הימים הקרובים</option>
+          </select>
+        </label>
+        <label class="check">
+          <input id="kids" type="checkbox"> מתאים לילדים
+        </label>
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <span id="count" aria-live="polite"></span>
+      <button id="addBtn" class="btn">＋ הוספת אירוע</button>
+    </div>
+
+    <section id="list" class="grid" aria-label="רשימת אירועים"></section>
+    <p id="empty" class="empty" hidden>לא נמצאו אירועים התואמים לחיפוש 🙁</p>
+  </main>
+
+  <dialog id="addDialog">
+    <form id="addForm" method="dialog">
+      <h2>הוספת אירוע חינמי</h2>
+      <label>שם האירוע<input name="title" required></label>
+      <label>תיאור<textarea name="description" rows="3"></textarea></label>
+      <div class="row">
+        <label>תאריך<input name="date" type="date" required></label>
+        <label>שעה<input name="time" type="time" required></label>
+      </div>
+      <div class="row">
+        <label>עיר<input name="city" required></label>
+        <label>מקום<input name="venue" required></label>
+      </div>
+      <div class="row">
+        <label>אזור<select name="region" id="formRegion"></select></label>
+        <label>קטגוריה<select name="category" id="formCategory"></select></label>
+      </div>
+      <label>קישור (לא חובה)<input name="link" type="url" placeholder="https://"></label>
+      <label class="check"><input name="kids" type="checkbox"> מתאים לילדים</label>
+      <p class="note">האירוע יישמר רק בדפדפן שלך.</p>
+      <div class="actions">
+        <button value="cancel" formnovalidate class="btn ghost">ביטול</button>
+        <button value="save" class="btn">שמירה</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="wrap footer">
+    <p>שימו לב: האירועים המוצגים כרגע הם <strong>נתוני דוגמה</strong>. כדאי לבדוק מול המארגנים לפני שיוצאים לדרך.</p>
+  </footer>
+
+  <script src="events.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
